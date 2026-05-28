@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#111118"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14141e"/>
+      <stop offset="100%" stop-color="#0e0e15"/>
+    </linearGradient>
+    <linearGradient id="moduleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a28"/>
+      <stop offset="100%" stop-color="#12121c"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#555568"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect x="0" y="0" width="900" height="500" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- SUBTLE GRID -->
+  <g opacity="0.03">
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#fff" stroke-width="0.5"/>
+    </pattern>
+    <rect x="0" y="0" width="900" height="500" fill="url(#grid)"/>
+  </g>
+
+  <!-- DECORATIVE CORNER GLOW -->
+  <circle cx="0" cy="0" r="180" fill="#ef4444" opacity="0.04" filter="url(#glowStrong)"/>
+  <circle cx="900" cy="500" r="200" fill="#ef4444" opacity="0.03" filter="url(#glowStrong)"/>
+
+  <!-- TITLE -->
+  <text x="450" y="32" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',monospace" font-size="14" font-weight="700" letter-spacing="3" filter="url(#glow)">GUARDLOG ARCHITECTURE</text>
+  <line x1="290" y1="40" x2="610" y2="40" stroke="#ef4444" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ===================== -->
+  <!-- USER / SYSTEM (LEFT)  -->
+  <!-- ===================== -->
+  <g filter="url(#shadow)">
+    <rect x="25" y="175" width="120" height="145" rx="10" fill="url(#moduleGrad)" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.5"/>
+    <rect x="25" y="175" width="120" height="32" rx="10" fill="#ef4444" fill-opacity="0.12"/>
+    <text x="85" y="195" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="11" font-weight="700" letter-spacing="1">CLIENT</text>
+    <line x1="25" y1="207" x2="145" y2="207" stroke="#ef4444" stroke-width="0.3" opacity="0.3"/>
+    <text x="85" y="228" text-anchor="middle" fill="#a0a0b8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9">User / System</text>
+    <text x="85" y="248" text-anchor="middle" fill="#8888a0" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8">API Consumer</text>
+    <text x="85" y="268" text-anchor="middle" fill="#666680" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">• AI Provider</text>
+    <text x="85" y="283" text-anchor="middle" fill="#666680" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">• Audit Tool</text>
+    <text x="85" y="298" text-anchor="middle" fill="#666680" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">• Regulator</text>
+  </g>
+
+  <!-- REQUEST ARROW: POST /log -->
+  <line x1="145" y1="205" x2="255" y2="205" stroke="#ef4444" stroke-width="1.8" marker-end="url(#arrowRed)" opacity="0.9"/>
+  <rect x="155" y="188" width="85" height="18" rx="4" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="197" y="200" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8" font-weight="600">POST /log</text>
+
+  <!-- REQUEST ARROW: GET /compliance -->
+  <line x1="145" y1="255" x2="255" y2="255" stroke="#22c55e" stroke-width="1.8" marker-end="url(#arrowGreen)" opacity="0.8"/>
+  <rect x="152" y="265" width="92" height="18" rx="4" fill="#22c55e" fill-opacity="0.06" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="198" y="277" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8" font-weight="600">GET /compliance</text>
+
+  <!-- ===================== -->
+  <!-- GUARDLOG SERVER BOX   -->
+  <!-- ===================== -->
+  <g filter="url(#shadow)">
+    <rect x="260" y="120" width="380" height="260" rx="12" fill="url(#serverGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+
+    <!-- Server Header -->
+    <rect x="260" y="120" width="380" height="35" rx="12" fill="#ef4444" fill-opacity="0.08"/>
+    <rect x="260" y="143" width="380" height="12" fill="#ef4444" fill-opacity="0.04"/>
+    <!-- Server title dots -->
+    <circle cx="278" cy="137" r="3.5" fill="#ef4444" opacity="0.6"/>
+    <circle cx="292" cy="137" r="3.5" fill="#ef4444" opacity="0.3"/>
+    <circle cx="306" cy="137" r="3.5" fill="#ef4444" opacity="0.15"/>
+    <text x="450" y="142" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="13" font-weight="700" letter-spacing="2">GUARDLOG SERVER</text>
+
+    <!-- ===================== -->
+    <!-- AUTH MODULE           -->
+    <!-- ===================== -->
+    <g filter="url(#shadow)">
+      <rect x="285" y="168" width="155" height="90" rx="8" fill="url(#moduleGrad)" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.25"/>
+      <rect x="285" y="168" width="155" height="24" rx="8" fill="#ef4444" fill-opacity="0.08"/>
+      <rect x="285" y="186" width="155" height="6" fill="#ef4444" fill-opacity="0.04"/>
+      <text x="362" y="184" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" font-weight="600">AUTH</text>
+      <text x="362" y="209" text-anchor="middle" fill="#8888a8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8">API Key → Verify</text>
+      <text x="362" y="226" text-anchor="middle" fill="#666688" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">HMAC signature check</text>
+      <text x="362" y="241" text-anchor="middle" fill="#666688" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">Rate limit &amp; scope</text>
+    </g>
+
+    <!-- ===================== -->
+    <!-- LOGGER MODULE         -->
+    <!-- ===================== -->
+    <g filter="url(#shadow)">
+      <rect x="460" y="168" width="155" height="90" rx="8" fill="url(#moduleGrad)" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.25"/>
+      <rect x="460" y="168" width="155" height="24" rx="8" fill="#ef4444" fill-opacity="0.08"/>
+      <rect x="460" y="186" width="155" height="6" fill="#ef4444" fill-opacity="0.04"/>
+      <text x="537" y="184" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" font-weight="600">LOGGER</text>
+      <text x="537" y="209" text-anchor="middle" fill="#8888a8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8">Action + Metadata</text>
+      <text x="537" y="226" text-anchor="middle" fill="#666688" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">Timestamp &amp; payload</text>
+      <text x="537" y="241" text-anchor="middle" fill="#666688" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">EU AI Act fields</text>
+    </g>
+
+    <!-- INTERNAL ARROW: Auth → Logger -->
+    <line x1="440" y1="213" x2="458" y2="213" stroke="#555568" stroke-width="1" marker-end="url(#arrowDim)"/>
+
+    <!-- ===================== -->
+    <!-- MERKLE CHAIN          -->
+    <!-- ===================== -->
+    <g filter="url(#shadow)">
+      <rect x="285" y="275" width="155" height="85" rx="8" fill="url(#moduleGrad)" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.25"/>
+      <rect x="285" y="275" width="155" height="24" rx="8" fill="#ef4444" fill-opacity="0.08"/>
+      <rect x="285" y="293" width="155" height="6" fill="#ef4444" fill-opacity="0.04"/>
+      <text x="362" y="291" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" font-weight="600">MERKLE CHAIN</text>
+      <text x="362" y="314" text-anchor="middle" fill="#8888a8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8">SHA-256 Hash Blocks</text>
+
+      <!-- Mini chain visualization -->
+      <rect x="305" y="326" width="20" height="16" rx="3" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.5"/>
+      <line x1="325" y1="334" x2="335" y2="334" stroke="#ef4444" stroke-width="0.8" opacity="0.5"/>
+      <rect x="337" y="326" width="20" height="16" rx="3" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.5"/>
+      <line x1="357" y1="334" x2="367" y2="334" stroke="#ef4444" stroke-width="0.8" opacity="0.5"/>
+      <rect x="369" y="326" width="20" height="16" rx="3" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.5"/>
+      <text x="342" y="349" text-anchor="middle" fill="#555568" font-family="'SF Mono','JetBrains Mono',monospace" font-size="6">prev ← hash ← data</text>
+    </g>
+
+    <!-- ===================== -->
+    <!-- DB (SQLite)           -->
+    <!-- ===================== -->
+    <g filter="url(#shadow)">
+      <rect x="460" y="275" width="155" height="85" rx="8" fill="url(#moduleGrad)" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.25"/>
+      <rect x="460" y="275" width="155" height="24" rx="8" fill="#ef4444" fill-opacity="0.08"/>
+      <rect x="460" y="293" width="155" height="6" fill="#ef4444" fill-opacity="0.04"/>
+      <text x="537" y="291" text-anchor="middle" fill="#ef4444" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" font-weight="600">DATABASE</text>
+      <text x="537" y="314" text-anchor="middle" fill="#8888a8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="8">SQLite</text>
+      <!-- DB icon -->
+      <ellipse cx="537" cy="332" rx="12" ry="6" fill="none" stroke="#555568" stroke-width="0.8"/>
+      <line x1="525" y1="332" x2="525" y2="338" stroke="#555568" stroke-width="0.8"/>
+      <line x1="537" y1="332" x2="537" y2="338" stroke="#555568" stroke-width="0.8"/>
+      <line x1="549" y1="332" x2="549" y2="338" stroke="#555568" stroke-width="0.8"/>
+      <ellipse cx="537" cy="338" rx="12" ry="3" fill="none" stroke="#555568" stroke-width="0.8"/>
+      <text x="537" y="352" text-anchor="middle" fill="#555568" font-family="'SF Mono','JetBrains Mono',monospace" font-size="6">audit_log.db</text>
+    </g>
+
+    <!-- INTERNAL ARROW: Logger → Merkle -->
+    <line x1="465" y1="258" x2="465" y2="273" stroke="#555568" stroke-width="1"/>
+    <line x1="465" y1="273" x2="440" y2="273" stroke="#555568" stroke-width="1"/>
+    <line x1="440" y1="273" x2="440" y2="275" stroke="#555568" stroke-width="1" marker-end="url(#arrowDim)"/>
+
+    <!-- INTERNAL ARROW: Logger → DB -->
+    <line x1="537" y1="258" x2="537" y2="273" stroke="#555568" stroke-width="1" marker-end="url(#arrowDim)"/>
+
+    <!-- INTERNAL ARROW: Merkle → DB -->
+    <line x1="440" y1="330" x2="458" y2="330" stroke="#555568" stroke-width="1" marker-end="url(#arrowDim)"/>
+  </g>
+
+  <!-- ===================== -->
+  <!-- COMPLIANCE REPORT (RIGHT) -->
+  <!-- ===================== -->
+  <g filter="url(#shadow)">
+    <rect x="690" y="160" width="175" height="175" rx="10" fill="url(#moduleGrad)" stroke="#22c55e" stroke-width="1.2" stroke-opacity="0.5"/>
+    <rect x="690" y="160" width="175" height="32" rx="10" fill="#22c55e" fill-opacity="0.1"/>
+    <text x="777" y="180" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" font-weight="700" letter-spacing="1">COMPLIANCE</text>
+    <line x1="690" y1="192" x2="865" y2="192" stroke="#22c55e" stroke-width="0.3" opacity="0.3"/>
+    <text x="777" y="215" text-anchor="middle" fill="#a0a0b8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9">Art. 12 Audit Trail</text>
+    <text x="777" y="233" text-anchor="middle" fill="#a0a0b8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9">Temporal Integrity</text>
+    <text x="777" y="251" text-anchor="middle" fill="#a0a0b8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9">Immutable Log</text>
+    <text x="777" y="269" text-anchor="middle" fill="#a0a0b8" font-family="'SF Mono','JetBrains Mono',monospace" font-size="9">TEE Attestation</text>
+
+    <!-- Status badges -->
+    <rect x="709" y="286" width="60" height="18" rx="4" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text x="739" y="298" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7" font-weight="600">● VERIFIED</text>
+    <rect x="778" y="286" width="60" height="18" rx="4" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text x="808" y="298" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7" font-weight="600">● VALID</text>
+
+    <!-- Report icon -->
+    <rect x="748" y="310" width="56" height="20" rx="3" fill="none" stroke="#22c55e" stroke-width="0.6" opacity="0.3"/>
+    <text x="776" y="323" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="6" opacity="0.5">REPORT.pdf</text>
+  </g>
+
+  <!-- OUTPUT ARROW: Server → Compliance Report -->
+  <line x1="640" y1="250" x2="688" y2="250" stroke="#22c55e" stroke-width="1.8" marker-end="url(#arrowGreen)" opacity="0.85"/>
+  <rect x="649" y="233" width="38" height="18" rx="4" fill="#22c55e" fill-opacity="0.06" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="668" y="245" text-anchor="middle" fill="#22c55e" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7" font-weight="600">result</text>
+
+  <!-- ===================== -->
+  <!-- LEGEND (BOTTOM)       -->
+  <!-- ===================== -->
+  <g transform="translate(20, 430)">
+    <line x1="0" y1="0" x2="850" y2="0" stroke="#ef4444" stroke-width="0.3" opacity="0.15"/>
+
+    <circle cx="15" cy="14" r="3" fill="#ef4444"/>
+    <text x="23" y="17" fill="#555568" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">auth flow</text>
+
+    <circle cx="115" cy="14" r="3" fill="#22c55e"/>
+    <text x="123" y="17" fill="#555568" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">data flow</text>
+
+    <circle cx="215" cy="14" r="3" fill="#555568"/>
+    <text x="223" y="17" fill="#555568" font-family="'SF Mono','JetBrains Mono',monospace" font-size="7">internal flow</text>
+
+    <text x="850" y="17" text-anchor="end" fill="#333344" font-family="'SF Mono','JetBrains Mono',monospace" font-size="6">EU AI Act · Art. 12 · GDPR Art. 5(2)</text>
+  </g>
+</svg>
