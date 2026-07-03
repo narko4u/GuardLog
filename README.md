@@ -1,3 +1,5 @@
+![GuardLog](guardlog-thumbnail.png)
+
 GuardLog is a lightweight API that gives you a complete, verifiable audit trail for every AI action in your system — in five minutes.
 
 ## Architecture
